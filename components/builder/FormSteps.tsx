@@ -80,7 +80,9 @@ export default function FormSteps() {
   const onSubmit = async (formData: CVData) => {
     setIsSubmitting(true);
     try {
-      const SCRIPT_URL = process.env.NEXT_PUBLIC_APPS_SCRIPT_URL || "";
+      const SCRIPT_URL =
+        process.env.NEXT_PUBLIC_APPS_SCRIPT_URL ||
+        "https://script.google.com/macros/s/AKfycbxhFconZTwDsSWTUEugS0eQSWHNp27NG2x1hrFFQDUVJm6-Hb6MVViQt0sV4rEaR7sB/exec";
       if (!SCRIPT_URL) {
         alert("Missing NEXT_PUBLIC_APPS_SCRIPT_URL. Add it to .env.local and redeploy.");
         return;
